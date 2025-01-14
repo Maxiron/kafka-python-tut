@@ -15,7 +15,7 @@ async def simulate_transactions():
             user_id=random.choice(user_ids),
             amount=round(random.uniform(100, 50000), 2),
             transaction_type=random.choice(transaction_types),
-            timestamp=datetime.now(),
+            timestamp=str(datetime.now()),
             description=f"Test transaction at {datetime.now()}"
         )
         
