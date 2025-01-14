@@ -21,7 +21,7 @@ async def simulate_transactions():
         
         async with httpx.AsyncClient() as client:
             response = await client.post(
-                "http://localhost:8000/transaction",
+                "http://localhost:8071/transaction",
                 json=transaction.dict()
             )
             print(f"Sent transaction: {response.json()}")
