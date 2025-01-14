@@ -13,6 +13,6 @@ class Transaction(BaseModel):
     user_id: str
     amount: float
     transaction_type: TransactionType
-    timestamp: datetime = datetime.now()
+    timestamp: str
     description: Optional[str] = None
     status: str = "pending"
