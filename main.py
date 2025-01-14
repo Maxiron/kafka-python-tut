@@ -24,7 +24,7 @@ app.add_middleware(
 
 
 # Initialize producer and consumer
-KAFKA_BOOTSTRAP_SERVERS = os.getenv('KAFKA_BOOTSTRAP_SERVERS', 'localhost:29092')
+KAFKA_BOOTSTRAP_SERVERS = os.getenv('KAFKA_BOOTSTRAP_SERVERS', 'localhost:9092')
 producer = TransactionProducer(KAFKA_BOOTSTRAP_SERVERS)
 consumer = TransactionConsumer(KAFKA_BOOTSTRAP_SERVERS)
 
