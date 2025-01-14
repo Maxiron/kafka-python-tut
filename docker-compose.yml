@@ -21,8 +21,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 15
-    networks:
-      - my-net
 
   kafka-ui:
     image: provectuslabs/kafka-ui
@@ -35,8 +33,6 @@ services:
     environment:
       - KAFKA_CLUSTERS_0_NAME=local
       - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka:29092
-    networks:
-      - my-net
 
   fastapi:
     build:
@@ -51,7 +47,3 @@ services:
     networks:
       - my-net
     
-
-networks:
-  my-net:
-    external: true
