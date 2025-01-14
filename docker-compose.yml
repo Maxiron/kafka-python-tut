@@ -31,7 +31,7 @@ services:
       - kafka
     ports:
       - "8070:8070"
-    restart: always
+    restart: on-failure
     environment:
       KAFKA_CLUSTERS_0_NAME: local
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
