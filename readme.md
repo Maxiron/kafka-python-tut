@@ -37,15 +37,16 @@ Ensure the following are installed and configured:
    ```bash
    docker compose up --build -d
    ```
-2. Ensure the `run.sh` script is executable:
-   ```bash
-   chmod +x run.sh
-   ```
-3. You can then simulate transactions by running the Python test script:
+2. You can then simulate transactions by running the Python test script:
    ```bash
    python3 test.py
    ```
-4. Similarly, you can just run the shell script `run.sh` with the optional `--runtest` argument. This will start the containers and run the test script:
+3. Similarly, you can just run the shell script `run.sh` with the optional `--runtest` argument. This will start the containers and run the test script:
+   Ensure the `run.sh` script is executable using
+   ```bash
+   chmod +x run.sh
+   ```
+   Run the script
    ```bash
    ./run.sh --runtest
    ```
