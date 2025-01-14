@@ -9,9 +9,9 @@ class TransactionConsumer(Thread):
         self.consumer = KafkaConsumer(
             topic,
             bootstrap_servers=bootstrap_servers,
-            value_deserializer=lambda x: json.loads(x.decode('utf-8')),
-            auto_offset_reset='earliest',
-            group_id='transaction_processor_group'
+            value_deserializer=lambda x: json.loads(x.decode('utf-8')), # Deserialize JSON data
+            auto_offset_reset='earliest', # Start reading at the beginning of the topic
+            group_id='transaction_processor_group' # Consumer group ID
         )
         self.running = True
 
@@ -27,6 +27,7 @@ class TransactionConsumer(Thread):
         # Update transaction status
         transaction['status'] = 'completed'
         print(f"Transaction completed: {transaction['transaction_id']}")
+        print(f"Transaction details: {transaction}")
         return transaction
 
     def run(self):
