@@ -15,8 +15,8 @@ async def simulate_transactions():
             user_id=random.choice(user_ids),
             amount=round(random.uniform(100, 50000), 2),
             transaction_type=random.choice(transaction_types),
-            timestamp=str(datetime.now()),
-            description=f"Test transaction at {datetime.now()}"
+            timestamp=datetime.now().isoformat(),
+            description=f"Test transaction at {datetime.now().isoformat()}"
         )
         
         async with httpx.AsyncClient() as client:
